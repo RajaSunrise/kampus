@@ -1,0 +1,58 @@
+{{define "content"}}
+<main class="flex-1 w-full max-w-[1280px] mx-auto px-4 md:px-10 py-8">
+    <h1 class="text-3xl font-bold mb-8">News & Events Hub</h1>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div class="flex flex-col gap-3 group cursor-pointer">
+                <div class="w-full aspect-video bg-cover bg-center rounded-lg relative" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMWxyBI-vLMJ17WMsR4vpUHly53Qp7XAMty9zO4MDUwQW48ivSuml_cWpKUhedd156cfayxmlHvsRmdTidcVQxoX8ivCQt9E2CXHtXgTqLOAWC7XTY1-3Px7gCtE-5DHFNwLeM01peI92JhJ0SVX4KQ4Y3YIvW2yApSmDCgzNp6R-xPYqs74x8nP12qRez9vfpzSV-VNOeer_RqpKKGFJhjKzGvEX1q7WR3PcYKD0WRUfuN6xYGvZTe6xKPFoemFqn-iztL6jeY5sk")'>
+                    <span class="absolute top-3 left-3 bg-white/90 text-xs font-bold px-2 py-1 rounded">Sep 28</span>
+                </div>
+                <div>
+                    <span class="text-xs font-bold text-primary uppercase">Academic</span>
+                    <h4 class="text-lg font-bold group-hover:text-primary transition-colors">Fall Semester Enrollment</h4>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3 group cursor-pointer">
+                <div class="w-full aspect-video bg-cover bg-center rounded-lg relative" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCG9VefaLUGsMJYNiZmbA3BXJjrIPfPAvoVsLx6x6V7WCgTHT3cJv9msvTvmDUiQHLAKw9k4RwrIpyjcqegx3jXOs6kowy9jGyY7jL2yMyQcRplNmGMw26NWl0KToYZkOJMhO6Oix07sm5SycXFyM6vzWesANxamJycd7xm0kHLlVRC9ZrncXVmF8WMzy4Mq84QI83ePzybkJqnMBopWu2uTqQS9A16TZCGX517aHMjeapuqdRvV7ZC_QWnhCAdo6Cm1qeISvF1LTkr")'>
+                    <span class="absolute top-3 left-3 bg-white/90 text-xs font-bold px-2 py-1 rounded">Sep 25</span>
+                </div>
+                <div>
+                    <span class="text-xs font-bold text-primary uppercase">Student Life</span>
+                    <h4 class="text-lg font-bold group-hover:text-primary transition-colors">Campus Jazz Festival</h4>
+                </div>
+            </div>
+
+        </div>
+        <aside class="flex flex-col gap-6">
+            <div class="bg-white p-6 rounded-xl border border-gray-200">
+                <h3 class="font-bold mb-4">Upcoming Events</h3>
+
+                <div class="flex gap-4 mb-4 last:mb-0">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex flex-col items-center justify-center text-primary shrink-0">
+                        <span class="text-[10px] font-bold">OCT</span>
+                        <span class="text-lg font-bold">12</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Guest Lecture: AI in Medicine</h4>
+                        <span class="text-xs text-gray-500">Main Campus</span>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mb-4 last:mb-0">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex flex-col items-center justify-center text-primary shrink-0">
+                        <span class="text-[10px] font-bold">NOV</span>
+                        <span class="text-lg font-bold">05</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Alumni Homecoming</h4>
+                        <span class="text-xs text-gray-500">Main Campus</span>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+    </div>
+</main>
+{{end}}

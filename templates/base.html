@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>University Technology Mataram</title>
+
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        /* Custom scrollbar for better look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Router Link Styles to remove default anchor behaviors where needed */
+        a { text-decoration: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen" hx-boost="true">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-[#e7edf3] bg-background-light/95 backdrop-blur dark:bg-background-dark/95 dark:border-gray-800">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-4">
+                <div class="flex size-10 items-center justify-center rounded-lg bg-primary text-white">
+                    <span class="material-symbols-outlined text-[28px]">school</span>
+                </div>
+                <h1 class="hidden text-xl font-bold tracking-tight text-[#0d141b] dark:text-white md:block">
+                    University Technology Mataram
+                </h1>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden items-center gap-6 lg:flex">
+                <a href="/about" class="text-sm transition-colors {{if eq .Path "/about"}}text-primary font-bold{{else}}text-[#0d141b] hover:text-primary dark:text-gray-200 dark:hover:text-primary font-medium{{end}}">About</a>
+                <a href="/academics" class="text-sm transition-colors {{if eq .Path "/academics"}}text-primary font-bold{{else}}text-[#0d141b] hover:text-primary dark:text-gray-200 dark:hover:text-primary font-medium{{end}}">Academics</a>
+                <a href="/admissions" class="text-sm transition-colors {{if eq .Path "/admissions"}}text-primary font-bold{{else}}text-[#0d141b] hover:text-primary dark:text-gray-200 dark:hover:text-primary font-medium{{end}}">Admissions</a>
+                <a href="/research" class="text-sm transition-colors {{if eq .Path "/research"}}text-primary font-bold{{else}}text-[#0d141b] hover:text-primary dark:text-gray-200 dark:hover:text-primary font-medium{{end}}">Research</a>
+                <a href="/student-life" class="text-sm transition-colors {{if eq .Path "/student-life"}}text-primary font-bold{{else}}text-[#0d141b] hover:text-primary dark:text-gray-200 dark:hover:text-primary font-medium{{end}}">Campus Life</a>
+                <a href="/news" class="text-sm transition-colors {{if eq .Path "/news"}}text-primary font-bold{{else}}text-[#0d141b] hover:text-primary dark:text-gray-200 dark:hover:text-primary font-medium{{end}}">News</a>
+                <a href="/contact" class="text-sm transition-colors {{if eq .Path "/contact"}}text-primary font-bold{{else}}text-[#0d141b] hover:text-primary dark:text-gray-200 dark:hover:text-primary font-medium{{end}}">Contact</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <button id="mobile-menu-btn" class="flex size-10 items-center justify-center rounded-full text-[#4c739a] hover:bg-gray-100 hover:text-primary dark:text-gray-400 dark:hover:bg-gray-800 transition-colors lg:hidden">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="hidden items-center gap-2 sm:flex">
+                    <div class="relative hidden xl:block">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[20px] text-[#4c739a]">search</span>
+                        <input class="h-10 w-64 rounded-lg border-none bg-[#e7edf3] pl-10 pr-4 text-sm font-medium text-[#0d141b] placeholder-[#4c739a] focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white dark:placeholder-gray-500" placeholder="Search..." type="text"/>
+                    </div>
+                    <button class="flex h-10 items-center justify-center rounded-lg bg-primary px-4 text-sm font-bold text-white transition-transform active:scale-95 hover:bg-blue-600">
+                        Student Portal
+                    </button>
+                    <a href="/directory" class="hidden h-10 items-center justify-center rounded-lg bg-[#e7edf3] px-4 text-sm font-bold text-[#0d141b] transition-transform active:scale-95 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 lg:flex">
+                        Staff Directory
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-4 flex flex-col gap-4 shadow-lg">
+            <a href="/about" class="text-sm font-medium p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">About</a>
+            <a href="/academics" class="text-sm font-medium p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Academics</a>
+            <a href="/admissions" class="text-sm font-medium p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Admissions</a>
+            <a href="/research" class="text-sm font-medium p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Research</a>
+            <a href="/student-life" class="text-sm font-medium p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Campus Life</a>
+             <a href="/news" class="text-sm font-medium p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">News</a>
+            <a href="/contact" class="text-sm font-medium p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Contact</a>
+             <a href="/directory" class="text-sm font-medium p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Directory</a>
+        </div>
+    </header>
+
+    {{template "content" .}}
+
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-8 dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 mt-auto">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-12 lg:grid-cols-4 lg:gap-8">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <div class="flex size-8 items-center justify-center rounded bg-primary text-white">
+                            <span class="material-symbols-outlined text-[20px]">school</span>
+                        </div>
+                        <span class="text-lg font-bold text-gray-900 dark:text-white">UTM</span>
+                    </div>
+                    <p class="mt-6 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+                        University Technology Mataram is a premier institution dedicated to technological advancement and research excellence.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white">Academics</h3>
+                    <ul class="mt-4 space-y-3">
+                        <li><a href="/academics" class="text-sm text-gray-500 hover:text-primary dark:text-gray-400">Undergraduate</a></li>
+                        <li><a href="/academics" class="text-sm text-gray-500 hover:text-primary dark:text-gray-400">Postgraduate</a></li>
+                        <li><a href="/directory" class="text-sm text-gray-500 hover:text-primary dark:text-gray-400">Faculty Directory</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white">Quick Links</h3>
+                    <ul class="mt-4 space-y-3">
+                        <li><a href="/student-life" class="text-sm text-gray-500 hover:text-primary dark:text-gray-400">Campus Life</a></li>
+                        <li><a href="/research" class="text-sm text-gray-500 hover:text-primary dark:text-gray-400">Research</a></li>
+                        <li><a href="/contact" class="text-sm text-gray-500 hover:text-primary dark:text-gray-400">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white">Contact</h3>
+                    <ul class="mt-4 space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-gray-500 dark:text-gray-400">
+                            <span class="material-symbols-outlined text-[18px] text-primary mt-0.5">location_on</span>
+                            <span>Jl. Majapahit No. 62, Mataram,<br/>Nusa Tenggara Barat, Indonesia</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+                            <span class="material-symbols-outlined text-[18px] text-primary">call</span>
+                            <span>+62 370 1234567</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+                            <span class="material-symbols-outlined text-[18px] text-primary">mail</span>
+                            <span>info@utm.ac.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-100 pt-8 dark:border-gray-800">
+                <p class="text-center text-sm text-gray-400">
+                    © 2024 University Technology Mataram. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        if(btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            // Close menu when clicking a link
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body>
+</html>

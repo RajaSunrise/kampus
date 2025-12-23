@@ -1,0 +1,61 @@
+{{define "content"}}
+<div class="w-full bg-background-light dark:bg-background-dark py-10 px-4 md:px-10 lg:px-40">
+    <div class="max-w-[960px] mx-auto">
+        <h1 class="text-3xl font-black mb-8">Faculty & Staff Directory</h1>
+
+        <!-- Search Mock -->
+        <div class="mb-10 flex gap-4">
+            <input type="text" placeholder="Search by name..." class="flex-1 h-12 px-4 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-white" />
+            <button class="h-12 px-6 bg-primary text-white font-bold rounded-lg">Search</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="p-5 bg-white dark:bg-[#151f28] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCjSF_gcBRDci7txa0mOXYrICYdIv4-4aDdTn57K_JHWWoM80zgQZsr8LkSEL6BygGn4oJNBhtNwxakiXojcLyDFuYvAdx9s2Sr702eZHSkg1Ty2jq3N0TPlJQHly5NEEzopLnYZxUiIKZq_HUmFL59S0vtDlONJfyJf4T2F4l5o9CzlM4iJtbFJWCR2m75msEQxI5m1E6ydB9FUFGYRLL-gXMir4MSRwYEQzQtJOSj7Bd2MrG5Yo5XdAeiQSJMSh7XaM733usXeZ0W")'></div>
+                    <div>
+                        <h3 class="font-bold">Dr. Sarah Hidayat</h3>
+                        <p class="text-sm text-primary">Dean of Engineering</p>
+                    </div>
+                </div>
+                <button class="w-full py-2 border border-gray-200 rounded text-sm font-bold hover:bg-gray-50">View Profile</button>
+            </div>
+
+            <div class="p-5 bg-white dark:bg-[#151f28] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0zRHxb24gsD2IGpX-2cMw77mvNK38sq2T-2jz1xKBiCR9cqbNXpd_xD_9vAHYXjYn-o9usRfOi2cMZ_zFRq1GJujzLtawqSU3loarSMVsKv73NtpqUdEREWkzNFyzoVrXRrD0MZHpW5uqHQUN7UuOLVxHXqssI9Lt1JO1UW9fNtEUVnYThIJB4EVtkkW66xwxZ-Hr_yBiD9nP3SCQBq2zxrluVAlOLI9uuD-K-6RUSZlNjoF1YxAEIJgSdMFsS11fo6MF2JOZKmoI")'></div>
+                    <div>
+                        <h3 class="font-bold">Budi Santoso</h3>
+                        <p class="text-sm text-primary">Senior Lecturer</p>
+                    </div>
+                </div>
+                <button class="w-full py-2 border border-gray-200 rounded text-sm font-bold hover:bg-gray-50">View Profile</button>
+            </div>
+
+            <div class="p-5 bg-white dark:bg-[#151f28] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClebLuMumZDe3JEnZVZe1QyW5d6kZLxcGWG5-HthO5L6FJBZtKO_Nh8TsuEcUQZCHZ6zV2FNuwLrMTq41LzFb4vGv4gcsb2Q8wwn_9pvNN17cLtaoTjCD1mNTCIrJP7d31GMlq1wPa8YcRvEsFLk65EIyP926GdEnEc2MxHpMw6BKReBJS2VD9Uq7-12hwsix6sEtULf2kfX2kAwZo8OElSqx9kC_ey9c7V-Ofb8b0B7r87AO6mUgnLUi-zAP_tyBKj2Hqh4SmLkqO")'></div>
+                    <div>
+                        <h3 class="font-bold">Anita Wijaya</h3>
+                        <p class="text-sm text-primary">Admissions Officer</p>
+                    </div>
+                </div>
+                <button class="w-full py-2 border border-gray-200 rounded text-sm font-bold hover:bg-gray-50">View Profile</button>
+            </div>
+
+            <div class="p-5 bg-white dark:bg-[#151f28] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlVIozH5YwRIAoDPof_ouHAYpQraAip_XEVHgyuiY-I69pbNUYGEGQuUe8f7omW0e29fkbOtzmQM6Or41yx1x6VStCedy28bDGYZsmLBfQYlXVy-WTAob8aTX6gX_bT-jacphmytZ0g54WZ4dpd3TST-PbTk-M3_5d-eySPQpD7vTf45UlBWwFsFqFHHlQF3JTKJLzPOxJSQ98Pw1IFmdRqzKsbk5i4zJj2IuWFdgM-jcnuKS-qvD-MgZQFfZugP1UOvlhxy89oLBI")'></div>
+                    <div>
+                        <h3 class="font-bold">Prof. David Chen</h3>
+                        <p class="text-sm text-primary">Head of Dept.</p>
+                    </div>
+                </div>
+                <button class="w-full py-2 border border-gray-200 rounded text-sm font-bold hover:bg-gray-50">View Profile</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+{{end}}
