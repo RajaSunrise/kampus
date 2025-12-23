@@ -1,0 +1,69 @@
+{{define "content"}}
+<div class="flex flex-col items-center w-full">
+    <!-- Hero -->
+    <div class="w-full px-4 md:px-40 flex flex-1 justify-center py-8">
+        <div class="w-full max-w-[960px] rounded-xl overflow-hidden relative min-h-[400px] flex items-center justify-center bg-cover bg-center" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC48yovSCgzXyHFa7alcv30KYYvA9II1X2cR5AOwvtXHeIT5X_YKqp8FnW5UedN2Tk0kgRvepLDnrqJgOgO-2mwKTEPR-ANod6VoE5sTXsVOOqaCn-UPKR0C0Bu-jXKsPI1oefffNj1_HKY-4w0Vpf2S1ba-ne0UpMs7lGH4F5isWJRmmiFEWySMbiPXH6F7mYEKPTkvrRr2JegIRFHhBNH25beSduJ6kNPCdHA9CTF92KMsjUv-HYX6k3LRTcT1wHj6p1ZltlntRc2")'>
+            <div class="flex flex-col gap-4 text-center max-w-[600px] z-10 px-4">
+                <h1 class="text-white text-4xl font-black leading-tight">Shape Your Future</h1>
+                <p class="text-gray-100 text-lg">Applications for the 2024-2025 academic year are now open.</p>
+                <div class="flex gap-4 justify-center mt-4">
+                    <button class="h-12 px-6 bg-primary hover:bg-blue-600 text-white font-bold rounded-lg transition-colors">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="w-full px-4 md:px-40 flex flex-1 justify-center py-10 bg-white dark:bg-[#15202b]">
+        <div class="w-full max-w-[960px]">
+            <h2 class="text-2xl font-bold mb-8">Application Timeline</h2>
+            <div class="grid grid-cols-[40px_1fr] gap-x-4">
+
+                <div class="flex flex-col items-center gap-1">
+                    <div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined">person_add</span>
+                    </div>
+                    <div class="w-[2px] bg-gray-200 dark:bg-gray-700 h-full grow min-h-[40px]"></div>
+                </div>
+                <div class="pb-8">
+                    <h3 class="font-bold text-lg">Create Account</h3>
+                    <p class="text-gray-500 text-sm">Register on the UTM Admission Portal.</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-1">
+                    <div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined">edit_document</span>
+                    </div>
+                    <div class="w-[2px] bg-gray-200 dark:bg-gray-700 h-full grow min-h-[40px]"></div>
+                </div>
+                <div class="pb-8">
+                    <h3 class="font-bold text-lg">Complete Application</h3>
+                    <p class="text-gray-500 text-sm">Fill in details and choose your program.</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-1">
+                    <div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined">upload_file</span>
+                    </div>
+                    <div class="w-[2px] bg-gray-200 dark:bg-gray-700 h-full grow min-h-[40px]"></div>
+                </div>
+                <div class="pb-8">
+                    <h3 class="font-bold text-lg">Upload Documents</h3>
+                    <p class="text-gray-500 text-sm">Submit transcripts and ID.</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-1">
+                    <div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined">check</span>
+                    </div>
+                </div>
+                <div class="pb-8">
+                    <h3 class="font-bold text-lg">Decision</h3>
+                    <p class="text-gray-500 text-sm">Receive notification via email.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{{end}}
